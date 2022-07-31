@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= form_with url: import_insurances_path, method: :post do |form| %>
+  <%= form.file_field :file, accept: ".csv" %>
+  <%= form.button "Import" %>
+<% end %>
+
+<h1>
+  Insurances:
+  <%= @insurances.count %>
+</h1>
+
+<div id="insurances">
+  <% @insurances.each do |insurance| %>
+    <%= render insurance %>
+  <% end %>
+</div>
