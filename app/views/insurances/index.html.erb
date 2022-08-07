@@ -5,6 +5,11 @@
   <%= form.button "Import" %>
 <% end %>
 
+<%= form_with url: import_xlsx_insurances_path, method: :post do |form| %>
+  <%= form.file_field :file, accept: ".xlsx" %>
+  <%= form.button "Import" %>
+<% end %>
+
 <h1>
   Insurances:
   <%= @insurances.count %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :insurances do
     collection do
       post :import
+      post :import_xlsx
     end
   end
 end
